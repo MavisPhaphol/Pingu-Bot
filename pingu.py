@@ -10,6 +10,10 @@ bot = commands.Bot(command_prefix="$", intents=intents)
 async def test(ctx):
     await ctx.send("Test Successful")
 
+@bot.command()
+async def ht(ctx,choice:str):
+    choice=choice.lower()
+    flip=random.choices(["heads","tails"])
 
 
 bot.run("*BOT TOKEN*")
