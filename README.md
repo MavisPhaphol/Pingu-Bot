@@ -3,3 +3,7 @@ Interactive Discord Bot that help you decide through various ways
 1. Heads or Tails
 2. Pingu chooses a random option provided by the user
 3. Added keyword "lizard" to insert lizard meme gif as response
+
+
+# COMING SOON
+- Pingu being able to play rock paper scissors with the user
