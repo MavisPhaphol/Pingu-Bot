@@ -40,15 +40,16 @@ async def rsp(ctx,selection:str):
     shoot=random.selection(["rock","paper","scissors"])
     await ctx.send("Your pick: "+userChoice+"\nPingu pick: "+shoot)
     if userChoice==shoot:
-        print("Tie!")
+        await ctx.send("Tie!")
     elif (
         (userChoice=="rock" and shoot=="scissors") or 
         (userChoice=="scissors" and shoot=="paper") or 
         (userChoice=="paper" and shoot=="rock") ):
-            print("You win!")
+            await ctx.send("You win!")
     else:
-        print("Pingu win!")
+        await ctx.send("Pingu win!")
 
 bot.run("**BOT TOKEN**") #bot goes online (will terminate when the file stops running)
+
 
 
