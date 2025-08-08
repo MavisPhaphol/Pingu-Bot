@@ -8,8 +8,8 @@ intents.message_content = True  # Required for reading message content
 
 bot = commands.Bot(command_prefix="$", intents=intents)
 
-@bot.event
-async def on_message(message):
+@bot.event #ADDED
+async def on_message(message): #ADDED
     if message.author == bot.user:
         return
     if "lizard" in message.content.lower(): #lizard without the syntax
@@ -19,19 +19,20 @@ async def on_message(message):
     await bot.process_commands(message)
 
 @bot.command() #test command to ensure functionality
-async def test(ctx):
+async def test(ctx): #ADDED
     await ctx.send("Test Successful")
 
 @bot.command()
 async def ht(ctx,choice:str): #heads or tails command
-    userChoice=choice.lower()
+    userChoice=choice.lower() #ADDED
     flip=random.choice(["heads","tails"])
     await ctx.send("Your Choice: "+userChoice+"\nResults: "+flip)
 
 @bot.command() #Random Selection command
-async def choose(ctx,choices:str):
+async def choose(ctx,choices:str): #ADDED
     options=choices.split()
     randomSelection=random.choice(options)
     await ctx.send("**PINGU SELECTS**: "+randomSelection)
 
 bot.run("**BOT TOKEN**") #bot goes online (will terminate when the file stops running)
+
