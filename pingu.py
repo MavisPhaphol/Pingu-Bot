@@ -6,6 +6,7 @@ intents.message_content = True  # Required for reading message content
 
 bot = commands.Bot(command_prefix="$", intents=intents)
 
+#made by Mavis Phaphol
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
@@ -16,16 +17,19 @@ async def on_message(message):
     ##SEPARATE FROM IF
     await bot.process_commands(message)
 
+#made by Mavis Phaphol
 @bot.command() #test command to ensure functionality
 async def test(ctx):
     await ctx.send("Test Successful")
 
+#made by Mavis Phaphol
 @bot.command() #heads or tails command
 async def ht(ctx,choice:str):
     userChoice=choice.lower()
     flip=random.choice(["heads","tails"])
     await ctx.send("Your Choice: "+userChoice+"\nResults: "+flip)
 
+#made by Mavis Phaphol
 @bot.command() #Random Selection command
 async def choose(ctx,choices:str):
     options=choices.split()
@@ -34,4 +38,5 @@ async def choose(ctx,choices:str):
 
 
 bot.run("*BOT TOKEN*")
+
 
