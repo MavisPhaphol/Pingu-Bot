@@ -34,5 +34,21 @@ async def choose(ctx,choices:str): #ADDED
     randomSelection=random.choice(options)
     await ctx.send("**PINGU SELECTS**: "+randomSelection)
 
+@bot.command() #Rock Paper Scissor command
+async def rsp(ctx,selection:str):
+    userChoice=selection.lower()
+    shoot=random.selection(["rock","paper","scissors"])
+    await ctx.send("Your pick: "+userChoice+"\nPingu pick: "+shoot)
+    if userChoice==shoot:
+        print("Tie!")
+    elif (
+        (userChoice=="rock" and shoot=="scissors") or 
+        (userChoice=="scissors" and shoot=="paper") or 
+        (userChoice=="paper" and shoot=="rock") ):
+            print("You win!")
+    else:
+        print("Pingu win!")
+
 bot.run("**BOT TOKEN**") #bot goes online (will terminate when the file stops running)
+
 
