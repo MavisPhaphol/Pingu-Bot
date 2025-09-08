@@ -36,7 +36,23 @@ async def choose(ctx,choices:str):
     randomSelection=random.choice(options)
     await ctx.send("**PINGU SELECTS**: "+randomSelection)
 
+#made by Mallory Phaphol
+@bot.command() #Rock Paper Scissor command
+async def rps(ctx,choices:str):
+    userChoice=choices.lower()
+    shoot=random.choice(["rock","paper","scissors"])
+    await ctx.send("Your pick: "+userChoice+"\nPingu pick: "+shoot)
+    if userChoice==shoot:
+        await ctx.send("Tie!")
+    elif (
+        (userChoice=="rock" and shoot=="scissors") or
+        (userChoice=="scissors" and shoot=="paper") or
+        (userChoice=="paper" and shoot=="rock") ):
+            await ctx.send("You win!")
+    else:
+        await ctx.send("Pingu win!")
 
 bot.run("*BOT TOKEN*")
+
 
 
