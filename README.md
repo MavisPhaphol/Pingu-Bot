@@ -8,3 +8,4 @@ Interactive Discord Bot that help you decide through various ways
 
 # COMING SOON
 - Pingu will be able to display all available commands
+- Embedded messages
