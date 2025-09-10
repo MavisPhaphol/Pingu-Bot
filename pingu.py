@@ -52,7 +52,18 @@ async def rps(ctx,choices:str):
     else:
         await ctx.send("Pingu win!")
 
+#made by Mallory Phaphol
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+    if "pingu" in message.content.lower():
+        pinguWaddle="https://tenor.com/view/catscafe-penguin-run-mood-gotta-go-gif-15488237"
+        await message.channel.send(pinguWaddle)
+    await bot.process_commands(message)
+
 bot.run("*BOT TOKEN*")
+
 
 
 
