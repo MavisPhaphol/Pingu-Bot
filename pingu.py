@@ -35,7 +35,7 @@ async def choose(ctx,choices:str): #ADDED
     await ctx.send("**PINGU SELECTS**: "+randomSelection)
 
 @bot.command() #Rock Paper Scissor command
-async def rsp(ctx,selection:str):
+async def rsp(ctx,selection:str): #ADDED
     userChoice=selection.lower()
     shoot=random.selection(["rock","paper","scissors"])
     await ctx.send("Your pick: "+userChoice+"\nPingu pick: "+shoot)
@@ -48,8 +48,13 @@ async def rsp(ctx,selection:str):
             await ctx.send("You win!")
     else:
         await ctx.send("Pingu win!")
+@client.command()
+async def embedMSG(ctx):
+    embed=discord.embed(title="Settings",description="List of commands",color="2E8D8F")
+    await ctx.send(embed=embed)
 
 bot.run("**BOT TOKEN**") #bot goes online (will terminate when the file stops running)
+
 
 
 
